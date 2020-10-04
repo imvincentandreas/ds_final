@@ -29,8 +29,9 @@ CREATE TABLE member (
 
 CREATE TABLE user_certification (
     memberID INT(11) NOT NULL,
-    certificateID INT(11) NOT NULL,
+    certificationID INT(11) NOT NULL,
+    earn DATE NOT NULL,
     expiration DATE NOT NULL,
     FOREIGN KEY (memberID) REFERENCES member(memberID),
-    FOREIGN KEY (certificationID) REFERENCES certification(certificateID)))
+    FOREIGN KEY (certificationID) REFERENCES certification(certificationID))
     ENGINE = INNODB;
