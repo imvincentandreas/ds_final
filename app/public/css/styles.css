@@ -4,23 +4,70 @@ body {
   color: #333;
 }
 
-nav,
-.navbar {
-  background-color: rgb(20,40,180);
-  color: #eee;
+.seal {
+  overflow: auto;
+}
+.image {
+  float: left;
+  padding: 10px;
+}
+
+.text {
+  float: left;
+}
+
+.header {
+  background-color: white;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 4px;
 }
 
 .navbar a.navbar-brand,
 .navbar a.nav-link,
 .navbar a.nav-link:visited {
-  color: #eee;
+  color: black;
 }
 
 .navbar a.nav-link:hover {
-  background-color: rgb(50,80,220);
-  color: #fff;
+  background-color: black;
+  color: white;
 }
 
+.header a.active {
+  background-color: red;
+  color: red;
+}
+
+.header-right {
+  float: left;
+}
+
+.oconee-body {
+  margin:0;
+  padding:0;
+  font-size: 25px;
+}
+
+.oconee-head {
+  font-size: 40px;
+  margin:0;
+  padding:0;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: black; /* Modern Browsers */
+}
 
 .cardPane {
   background-color: #eee;
