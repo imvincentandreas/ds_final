@@ -12,6 +12,9 @@ var app = new Vue({
   computed: {
     activePtName() {
       return this.activePt ? this.activePt.lastName + ', ' + this.activePt.firstName : ''
+    },
+    activePtDob() {
+      return this.activePt ? this.activePt.dob : ''
     }
   },
   methods: {
