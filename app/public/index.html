@@ -1,88 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- my custom CSS goes here -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <title>Triage — Triage App</title>
-  </head>
-
-  <body>
-    <div class="seal">
-      <img class="image" src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" width="90" height="110">
-      <div class="text">
-        <p class="oconee-head"><b>Oconee County Fire Rescue</b></p>
-        <p class="oconee-body"><b>Oconee County, GA</b></p>
-      </div>
-    </div>
-    <div class="header">
-      <div class="header-right">
-        <nav class="navbar navbar-expand-md">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="members.html">Members</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="certifications.html">Certifications</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Reports
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="expiredcerts.php">Expired Certs</a>
-                  <a class="dropdown-item" href="memberreport.php">Member Report</a>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>OCFR</title>
+        <link rel="icon" type="image/x-icon" href="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html"><img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" alt="" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#masthead">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
                 </div>
-              </li>
-            </ul>
-          </div>
+            </div>
         </nav>
-      </div>
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div class="login">
-      <div class="centered" align = "center" id = "form">
-        <form action="login.php" method="post">
-           <div class="form-group">
-             <label for="username">Email: </label>
-            <input type = "email" name = "username" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password: </label> <input type = "password" name = "password" required><br>
-          </div>
-          <input type="submit" value ="Login"><br>
-          <p>Please Contact Us If You Would Like To Register For An Account.</p>
-        </form>
-      </div>
-    </div>
-
-    <hr>
-    <!-- END content -->
-
-    <!-- Footer? Insert here -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/index.app.js"></script>
-  </body>
+        <!-- Masthead-->
+        <header class="masthead" id="masthead">
+            <div class="container">
+                <div class="masthead-heading text-uppercase">FIRE RESCUE</div>
+                <div class="masthead-subheading">Oconee County, GA</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="login.html">Login</a>
+            </div>
+        </header>
+        
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">About</h2>
+                    <h3 class="section-subheading text-muted">Oconee County Fire Rescue</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/firetruck.jpg" alt="https://www.oconeecounty.com/ImageRepository/Path?filePath=%2Fdocuments%5CIntranet%5C37%2FFire+Department+1.jpg" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Mission</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">The mission of Oconee County Fire Rescue is to save lives and property, to strive to provide the best emergency services possible, and to promote fire safety to make Oconee County a safer place to live.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/firefigher.jpg" alt="https://www.facebook.com/BlaneMarablePhoto/photos/a.10154605007974885/10154605038234885/" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Responsibilities</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Fire Rescue is responsible for planning, coordinating and implementing the fire prevention and suppression activities of seven volunteer fire stations in Oconee County. These seven fire stations are staffed with 180 volunteer firefighters and first responders, who provide Fire and EMS support services to Oconee County.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/brucethaxton.jpg" alt="https://www.oconeecounty.com/932/Fire-Safety" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Fire Chief</h4>
+                                <h4 class="subheading">Bruce Thaxton</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Fire Chief Bruce Thaxton has held the position with Oconee County for over a decade where he is responsible for hundreds of staff and calls every single day. Bruce is an extremely dedicated father and fighter, there is no word strong enough to express Oconee County's gratitude towards him.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Story!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">Meet The Team Who Build This Site.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/vincent.jpg" alt="" />
+                            <h4>Vincent Andreas</h4>
+                            <p class="text-muted">Lead Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/vandreas/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/ayushi.jpg" alt="" />
+                            <h4>Ayushi Mistry</h4>
+                            <p class="text-muted">Lead Designer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/ayushimistry/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/taylor.jpg" alt="" />
+                            <h4>Taylor Burdman</h4>
+                            <p class="text-muted">Lead Analyst</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/taylor-burdman/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/daniel.jpg" alt="" />
+                            <h4>Daniel Rodnunsky</h4>
+                            <p class="text-muted">Lead Consultant</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/daniel-rodnunsky/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">"From Moment To Alcoholism" - MSIS 2020</p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients-->
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="https://kelley.iu.edu/"><img class="img-fluid d-block mx-auto" src="https://home.kelley.iupui.edu/notaylor/A337/images/KSBB.H.P2.201.gif" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="https://bigredliquors.com/"><img class="img-fluid d-block mx-auto" src="https://d3omj40jjfp5tk.cloudfront.net/app_assets/net.cityhive.store.bigredliquo/common/5e8f9e230740e9249f2f0605.png" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="https://kilroyskirkwood.com/"><img class="img-fluid d-block mx-auto" src="https://www.kilroysindy.com/wp-content/uploads/2020/02/web-logo.png" alt="" width=60 height=60/></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="https://www2.deloitte.com/us/en.html"><img class="img-fluid d-block mx-auto" src="https://www.signal-ai.com/wp-content/uploads/fly-images/2945/Deloitte-Logo-e1505158716925-1-800x450-c.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Please feel free to leave a comment if you have any feedback or questions.</h3>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">Copyright 2020 © MSIS Team 18</div>
+                    <div class="col-lg-4 my-3 my-lg-0"></div>
+                    <div class="col-lg-4 text-lg-right">Template Obtained From StartBootstrap.com</div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>

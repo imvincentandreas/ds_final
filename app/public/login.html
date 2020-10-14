@@ -40,38 +40,29 @@
                 <div class="masthead-subheading">Oconee County, GA</div>
             </div>
         </header>
-        <!-- Selection-->
+        <!-- Login-->
         <section class="page-section" id="login">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Members</h2>
-                    <h3 class="section-subheading text-muted">Welcome to the main members page, please select your option.</h3>
+                    <h2 class="section-heading text-uppercase">Login</h2>
+                    <h3 class="section-subheading text-muted">If you do not have an account or forgot your details, please contact us at (706) 769-3975.</h3>
                 </div>
-                <form method="post" action="viewmembers.php" id="viewmembers" name="viewmembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="viewmembers" type="submit">View Members</button>
+                <form method="post" action="login.php" id="login" name="login" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5 justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" name="email" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email address." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="password" id="password" type="password" placeholder="Password" required="required" data-validation-required-message="Please enter your password." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
                     </div>
-                </form>
-                <br>
-                <form method="post" action="addmembers.html" id="addmembers" name="addmembers" novalidate="novalidate">
                     <div class="text-center">
                         <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="addmembers" type="submit">Add Members</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="editmembers.php" id="editmembers" name="editmembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="editmembers" type="submit">Edit Members</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="deletemembers.php" id="deletemebers" name="deletemembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="deletemembers" type="submit">Delete Members</button>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="login" type="submit">Login</button>
                     </div>
                 </form>
             </div>

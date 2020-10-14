@@ -47,33 +47,33 @@
                     <h2 class="section-heading text-uppercase">Members</h2>
                     <h3 class="section-subheading text-muted">Welcome to the main members page, please select your option.</h3>
                 </div>
-                <form method="post" action="viewmembers.php" id="viewmembers" name="viewmembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="viewmembers" type="submit">View Members</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="addmembers.html" id="addmembers" name="addmembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="addmembers" type="submit">Add Members</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="editmembers.php" id="editmembers" name="editmembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="editmembers" type="submit">Edit Members</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="deletemembers.php" id="deletemebers" name="deletemembers" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="deletemembers" type="submit">Delete Members</button>
-                    </div>
-                </form>
+                <?php
+                    require 'common.php';
+
+                    $db = DbConnection::getConnection();
+
+                    $sql = 'SELECT * FROM member';
+
+                    $stmt = $db->prepare($sql);
+
+                    $stmt->execute();
+
+                    $member = $stmt->fetchAll();
+
+                    $json = json_encode($member, JSON_PRETTY_PRINT);
+
+                    echo $json;
+
+                    $table = '<table class="table"><thead class="thead-dark"><th scope="col">No.</th><th scope="col">First Name</th><th scope="col">Middle Name</th><th scope="col">Last Name</th><th scope="col">Street</th><th scope="col">City</th><th scope="col">State</th><th scope="col">Zipcode</th><th scope="col">Phone</th><th scope="col">Email</th><th scope="col">Position</th><th scope="col">Radio Number</th><th scope="col">Station</th><th scope="col">Status</th><tbody>';
+
+                    for($i = 0; $i < sizeof($json); $i++) {
+                        $table = '<th scope = "row">$json["memberID"]</th>';
+                    }
+                    
+                    $table .= '</tbody></table>';
+                    
+                    echo $table;
+                ?>
             </div>
         </section>  
         <!-- Footer-->
