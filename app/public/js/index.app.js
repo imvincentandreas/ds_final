@@ -1,8 +1,8 @@
 var app = new Vue({
   el: '#triagePage',
   data: {
-    ptList: [],
-    activePt: null,
+    memList: [],
+    activemem: null,
     triageForm: {
       priority: null,
       symptoms: ''
@@ -18,12 +18,13 @@ var app = new Vue({
     }
   },
   methods: {
-    newPtData() {
+    newmemData() {
       return {
         firstName: "",
         lastName: "",
         dob: "",
         sexAtBirth: ""
+        //add and modify to match same as form
       }
     },
     handleNewPtForm( evt ){
@@ -37,11 +38,11 @@ var app = new Vue({
       */
 
       console.log("Creating...!");
-      console.log(this.newPtForm);
+      console.log(this.newmemForm);
 
-      this.ptList.push(this.newPtForm);
+      this.memList.push(this.newmemForm);
 
-      this.newPtForm = this.newPtData();
+      this.newmemForm = this.newPtData();
     },
     handleTriageForm( evt ) {
       console.log("Form submitted!");
@@ -52,13 +53,13 @@ var app = new Vue({
     }
   },
   created() {
-    fetch("dummy/pt-list.php")
+    fetch("app/public/api/members/addmembers.php")
     .then( response => response.json() )
     .then( json => {
-      this.ptList = json;
+      this.memList = json;
 
       console.log(json)}
     );
-    this.newPtForm = this.newPtData();
+    this.newmemForm = this.newmemData();
   }
 })
