@@ -1,64 +1,74 @@
 var app = new Vue({
   el: '#triagePage',
   data: {
-    ptList: [],
-    activePt: null,
-    triageForm: {
-      priority: null,
-      symptoms: ''
-    },
-    newPtForm: {}
+    memberList: [],
+    visitList: [],
+    activeMember: null,
+    triageForm: {},
+    newMemberForm: {}
   },
   computed: {
-    activePtName() {
-      return this.activePt ? this.activePt.lastName + ', ' + this.activePt.firstName : ''
-    },
-    activePtDob() {
-      return this.activePt ? this.activePt.dob : ''
+    activeMemberName() {
+      return this.activeMember ? this.activeMember.lastName + ', ' + this.activeMember.firstName : ''
     }
   },
   methods: {
-    newPtData() {
+    newMemberData() {
       return {
-        firstName: "",
-        lastName: "",
-        dob: "",
-        sexAtBirth: ""
+        fname: "",
+        mname: "",
+        lname: "",
+        street: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone: "",
+        email: "",
+        position: "",
+        station: "",
+        radio_num: ""
       }
     },
-    handleNewPtForm( evt ){
-      evt.preventDefault();  // Redundant w/ Vue's submit.prevent
-      /*
-      //TODO: Hook to API
-      fetch( url, {
-       method: "post",
-       data: data
+    /* newTriageData() {
+      return {
+        priority: "",
+        visitDate: "",
+        visitDescription: ""
+      }
+    }, */
+    handleNewMemberForm( evt ) {
+      fetch('api/members/addmembers.php', {
+        method:'POST',
+        body: JSON.stringify(this.newMemberForm),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
       })
-      */
-
-      console.log("Creating...!");
-      console.log(this.newPtForm);
-
-      this.ptList.push(this.newPtForm);
-
-      this.newPtForm = this.newPtData();
-    },
-    handleTriageForm( evt ) {
-      console.log("Form submitted!");
-
-      this.triageForm.pt = this.activePt;
-      console.log(this.triageForm);
+      .then( response => response.text() );
 
     }
-  },
-  created() {
-    fetch("dummy/pt-list.php")
-    .then( response => response.json() )
-    .then( json => {
+
+      /*,
+      created() {
+      fetch("api/records/")
+      .then( response => response.json() )
+      .then( json => {
       this.ptList = json;
 
       console.log(json)}
-    );
-    this.newPtForm = this.newPtData();
+      );
+
+      fetch("api/visits/")
+      .then( response => response.json() )
+      .then( json => {
+      this.visitList = json;
+
+      console.log(json)}
+      );
+
+      this.newMemberForm = this.newMemberData();
+      this.newTriageForm = this.newTriageData();
+      } */
+
   }
-})
+});

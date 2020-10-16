@@ -42,31 +42,31 @@
         </header>
         <!-- Form-->
         <section class="page-section" id="login">
-            <div class="container">
+            <div class="container" id="triagePage">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Add Member</h2>
                     <h3 class="section-subheading text-muted">Please input new member details here.</h3>
                 </div>
-                <form method="post" action="addmembers.php" id="addmembers" name="addmembers" novalidate="novalidate">
+                <form method="post" v-on:submit="handleNewMemberForm()" id="addmembers" name="addmembers" novalidate="novalidate">
                     <div class="row align-items-stretch mb-5 justify-content-center">
                         <div class="col-md-3">
                             <center><h4 class="section-heading text-uppercase">Name</h4></center>
                             <br>
                             <div class="form-group">
                                 <label for="fname">First Name:</label>
-                                <input class="form-control" name="fname" id="fname" type="text" />
+                                <input class="form-control" v-model="newMemberForm.fname" name="fname" id="fname" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="mname">Middle Name:</label>
-                                <input class="form-control" name="mname" id="mname" type="text" />
+                                <input class="form-control" v-model="newMemberForm.mname" name="mname" id="mname" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="lname">Last Name:</label>
-                                <input class="form-control" name="lname" id="lname" type="text" />
+                                <input class="form-control" v-model="newMemberForm.lname" name="lname" id="lname" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -75,25 +75,25 @@
                             <br>
                             <div class="form-group">
                                 <label for="street">Street:</label>
-                                <input class="form-control" name="street" id="street" type="text" />
+                                <input class="form-control" v-model="newMemberForm.street" name="street" id="street" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="city">City:</label>
-                                <input class="form-control" name="city" id="city" type="text" />
+                                <input class="form-control" v-model="newMemberForm.city" name="city" id="city" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="state">State:</label>
-                                <input class="form-control" name="state" id="state" type="text" />
+                                <input class="form-control" v-model="newMemberForm.state" name="state" id="state" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="zip">Zipcode:</label>
-                                <input class="form-control" name="zip" id="zip" type="text" />
+                                <input class="form-control" v-model="newMemberForm.zip" name="zip" id="zip" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -102,13 +102,13 @@
                             <br>
                             <div class="form-group">
                                 <label for="phone">Phone:</label>
-                                <input class="form-control" name="phone" id="phone" type="text" />
+                                <input class="form-control" v-model="newMemberForm.phone" name="phone" id="phone" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input class="form-control" name="email" id="email" type="text" />
+                                <input class="form-control" v-model="newMemberForm.email" name="email" id="email" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -117,30 +117,30 @@
                             <br>
                             <div class="form-group">
                                 <label for="position">Position:</label>
-                                <input class="form-control" name="position" id="position" type="text" />
+                                <input class="form-control" v-model="newMemberForm.position" name="position" id="position" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="station">Station:</label>
-                                <input class="form-control" name="station" id="station" type="text" />
+                                <input class="form-control" v-model="newMemberForm.station" name="station" id="station" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="radio_num">Radio Number:</label>
-                                <input class="form-control" name="radio_num" id="radio_num" type="text" />
+                                <input class="form-control" v-model="newMemberForm.radio_num" name="radio_num" id="radio_num" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                     </div>
                     <div class="text-center">
                         <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="login" type="submit">Add Member</button>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit">Add Member</button>
                     </div>
                 </form>
             </div>
-        </section>  
+        </section>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -151,7 +151,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

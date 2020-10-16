@@ -40,42 +40,46 @@
                 <div class="masthead-subheading">Oconee County, GA</div>
             </div>
         </header>
-        <!-- Selection-->
-        <section class="page-section" id="login">
+        <!-- Table-->
+        <section class="page-section" id="viewMembers">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Members</h2>
-                    <h3 class="section-subheading text-muted">Welcome to the main members page, please select your option.</h3>
+                    <h2 class="section-heading text-uppercase">View Members</h2>
                 </div>
-                <?php
-                    require 'common.php';
-
-                    $db = DbConnection::getConnection();
-
-                    $sql = 'SELECT * FROM member';
-
-                    $stmt = $db->prepare($sql);
-
-                    $stmt->execute();
-
-                    $member = $stmt->fetchAll();
-
-                    $json = json_encode($member, JSON_PRETTY_PRINT);
-
-                    echo $json;
-
-                    $table = '<table class="table"><thead class="thead-dark"><th scope="col">No.</th><th scope="col">First Name</th><th scope="col">Middle Name</th><th scope="col">Last Name</th><th scope="col">Street</th><th scope="col">City</th><th scope="col">State</th><th scope="col">Zipcode</th><th scope="col">Phone</th><th scope="col">Email</th><th scope="col">Position</th><th scope="col">Radio Number</th><th scope="col">Station</th><th scope="col">Status</th><tbody>';
-
-                    for($i = 0; $i < sizeof($json); $i++) {
-                        $table = '<th scope = "row">$json["memberID"]</th>';
-                    }
-                    
-                    $table .= '</tbody></table>';
-                    
-                    echo $table;
-                ?>
             </div>
-        </section>  
+            <center>
+              <div id="memberInfo">
+              <table class="table table-hover w-auto" width="90%" id="tablesort">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Station</th>
+                    <th scope="col">Radio Number</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="m in members">
+                    <th scope="row"> {{ m.memberID }}</th>
+                    <td>{{ m.fname }} {{ m.mname }} {{ m.lname }}</td>
+                    <td>{{ m.street }}, {{ m.city }}, {{ m.state }} {{ m.zip }}</td>
+                    <td>{{ m.phone }}</td>
+                    <td>{{ m.email }}</td>
+                    <td>{{ m.position }}</td>
+                    <td>{{ m.station }}</td>
+                    <td>{{ m.radio_num }}</td>
+                    <td>{{ m.status }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </center>
+        </section>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -86,7 +90,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -97,8 +101,12 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- Vue JS-->
+        <!-- Table Contents JS-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="js/index.app.js"></script>
+        <script src="js/member.js"></script>
+        <script src="js/tablesort.min.js"></script>
+        <script src="js/tablesort.number.min.js"></script>
+        <!-- Sort Table-->
+        <script>new Tablesort(document.getElementById('tablesort'));</script>
     </body>
 </html>

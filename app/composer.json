@@ -1,9 +1,9 @@
 {
-    "name": "iu-msis/project-triage-2020",
-    "description": "An in-class example project",
+    "name": "ds_final",
+    "description": "DS Milestone Project",
     "license": "private",
     "authors": [{
-        "name": "Tom Gregory"
+        "name": "Vincent Andreas"
     }],
     "require": {
       "ramsey/uuid": "^4.1"
