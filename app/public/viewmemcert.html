@@ -42,49 +42,42 @@
                 <div class="masthead-subheading">Oconee County, GA</div>
             </div>
         </header>
-        <!-- Selection-->
-        <section class="page-section" id="login">
+        <!-- Table-->
+        <section class="page-section" id="viewCertificates">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Certificates</h2>
-                    <h3 class="section-subheading text-muted">Welcome to the main certficates page, please select your option.</h3>
+                    <h2 class="section-heading text-uppercase">View Member Certifications</h2>
                 </div>
-                <form method="post" action="viewcertificates.html" id="viewcertificates" name="viewcertificates" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="viewcertificates" type="submit">View Certificates</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="addcertificates.html" id="addcertificates" name="addcertificates" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="addcertificates" type="submit">Add Certificates</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="deletecertificates.html" id="deletecertificates" name="deletecertificates" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="deletecertificates" type="submit">Delete Certificates</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="viewmemcert.html" id="viewmemcert" name="viewmemcert" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="viewmemcert" type="submit">View Active Certifications</button>
-                    </div>
-                </form>
-                <br>
-                <form method="post" action="viewexpcert.html" id="viewexpcert" name="viewexpcert" novalidate="novalidate">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="viewexpcert" type="submit">View Expired Certifications</button>
-                    </div>
-                </form>
-
             </div>
+            <center>
+              <div id="memberCertificate">
+              <table class="table table-hover w-auto" width="90%" id="tablesort">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Member Name</th>
+                    <th scope="col">Cerfication Name</th>
+                    <th scope="col">Earned Date</th>
+                    <th scope="col">Expiry Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="mc in memberCertificate">
+                    <th scope="row">{{ mc.fname }} {{ mc.mname }} {{ mc.lname }}</th>
+                    <td>{{ mc.name }}</td>
+                    <td>{{ mc.earn }}</td>
+                    <td>{{ mc.expiration }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br>
+            <form method="post" action="certificates.html" id="certificates" name="certificates" novalidate="novalidate">
+                <div class="text-center">
+                    <div id="success"></div>
+                    <button class="btn btn-primary btn-xl text-uppercase" id="certificates" type="submit">Back</button>
+                </div>
+            </form>
+          </center>
         </section>
         <!-- Footer-->
         <footer class="footer py-4">
@@ -107,5 +100,12 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Table Contents JS-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/memcert.js"></script>
+        <script src="js/tablesort.min.js"></script>
+        <script src="js/tablesort.number.min.js"></script>
+        <!-- Sort Table-->
+        <script>new Tablesort(document.getElementById('tablesort'));</script>
     </body>
 </html>
