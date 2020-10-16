@@ -26,11 +26,7 @@ $stmt->execute([
 
 $memberId = $db->lastInsertID();
 
-echo '<script>alert("Member Successfully Added");</script>';
-
 header('HTTP/1.1 303 See Other');
 
 header('Location: ../members/');
-
-header('Location: ../members.html');
 ?>
