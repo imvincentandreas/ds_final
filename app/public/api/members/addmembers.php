@@ -5,7 +5,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
-  'INSERT INTO member (fname, mname, lname, street, city, state, zip, phone, email, position, station, radio_num, status)
+  'INSERT INTO member (fname, mname, lname, street, city, state, zip, phone, email, position, stationID, radio_num, status)
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "Active")'
 );
 

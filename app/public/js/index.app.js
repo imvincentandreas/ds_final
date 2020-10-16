@@ -40,5 +40,6 @@ var insertMember = new Vue({
 });
 
 function success() {
-  alert("User Successfully");
+  alert("Member added successfully, redirecting to view members page");
+  window.location.href = "viewmembers.html";
 }
