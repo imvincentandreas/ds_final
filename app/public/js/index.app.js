@@ -40,5 +40,5 @@ var insertMember = new Vue({
 });
 
 function success() {
-  alert("User Successfully Added");
+  alert("User Successfully");
 }
