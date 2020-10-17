@@ -46,10 +46,18 @@
         <section class="page-section" id="login">
             <div class="container" id="updateMember">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Add Member</h2>
+                    <h2 class="section-heading text-uppercase">Update Member</h2>
                     <h3 class="section-subheading text-muted">Please input new member details here.</h3>
                 </div>
-                <form @submit.prevent = "handleNewMemberForm">
+                <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
+                    <span class="lastName">{{ pt.lastName }}</span>,
+                    <span clas="firstName">{{ pt.firstName }}</span>
+                    <span class="birthDate float-right">{{ pt.dob }}</span>
+                  </div>
+
+                  <!-- <button v-on:click="yell()">Click Me!</button> -->
+                </div>
+                <form v-on:submit.prevent = "handleNewMemberForm">
                     <div class="row align-items-stretch mb-5 justify-content-center">
                         <div class="col-md-3">
                             <center><h4 class="section-heading text-uppercase">Name</h4></center>
