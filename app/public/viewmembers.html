@@ -78,26 +78,6 @@
                     <td>{{ m.stationID }}</td>
                     <td>{{ m.radio_num }}</td>
                     <td>{{ m.status }}</td>
-                    <td>
-                      <form method="post" action="updatemembers.html">
-                        <div class="form-group">
-                            <input class="form-control" name="memberID" id="memberID" type="hidden" v-bind:value="{{ m.memberID }}"/>
-                        </div>
-                        <div class="text-center">
-                            <div id="success"></div>
-                            <button class="btn btn-primary btn-xl text-uppercase" id="edit" type="submit">Edit</button>
-                        </div>
-                    </td>
-                    <td>
-                      <form method="post" action="deletemember.html">
-                        <div class="form-group">
-                            <input class="form-control" name="memberID" id="memberID" type="hidden" v-bind:value="{{ m.memberID }}"/>
-                        </div>
-                        <div class="text-center">
-                            <div id="success"></div>
-                            <button class="btn btn-primary btn-xl text-uppercase" id="delete" type="submit">Delete</button>
-                        </div>
-                    </td>
                   </tr>
                 </tbody>
               </table>
