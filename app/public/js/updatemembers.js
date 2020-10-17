@@ -1,7 +1,8 @@
 var updateMember = new Vue({
   el: '#updateMember',
   data: {
-    members: {}
+    members: {},
+    activeMember: null
   },
   methods: {
     fetchMembers() {
@@ -10,7 +11,7 @@ var updateMember = new Vue({
       .then(json => { memberInfo.members = json })
     },
 
-    handleNewMemberForm() {
+    handleUpdateMemberForm() {
     fetch('api/members/updatemembers.php', {
       method:'POST',
       body: JSON.stringify(this.members),
