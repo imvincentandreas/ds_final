@@ -5,7 +5,7 @@ var memberCertificate = new Vue({
   },
   methods: {
     fetchMemberCertificates() {
-      fetch('api/certificates/viewexpcert.php')
+      fetch('api/records/viewexpcert.php')
       .then(response => response.json())
       .then(json => { memberCertificate.memberCertificate = json })
     }

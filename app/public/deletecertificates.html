@@ -42,54 +42,54 @@
                 <div class="masthead-subheading">Oconee County, GA</div>
             </div>
         </header>
-        <!-- Table-->
-        <section class="page-section" id="viewMembers">
-            <div class="container">
+        <!-- Form-->
+        <section class="page-section" id="login">
+            <div class="container" id="certificateInfo">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">View Members</h2>
+                    <h2 class="section-heading text-uppercase">Delete Certification</h2>
                 </div>
-            </div>
-            <center>
-              <div id="memberInfo">
+                <div id="certificateInfo">
                 <table class="table table-hover w-auto" width="90%" id="tablesort">
                   <thead class="thead-dark">
                     <tr>
                       <th scope="col">No.</th>
                       <th scope="col">Name</th>
-                      <th scope="col">Address</th>
-                      <th scope="col">Phone</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Position</th>
-                      <th scope="col">StationID</th>
-                      <th scope="col">Radio Number</th>
-                      <th scope="col">Status</th>
-                      <th scope="col"></th>
-                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="m in members">
-                      <th scope="row"> {{ m.memberID }}</th>
-                      <td>{{ m.fname }} {{ m.mname }} {{ m.lname }}</td>
-                      <td>{{ m.street }}, {{ m.city }}, {{ m.state }} {{ m.zip }}</td>
-                      <td>{{ m.phone }}</td>
-                      <td>{{ m.email }}</td>
-                      <td>{{ m.position }}</td>
-                      <td>{{ m.stationID }}</td>
-                      <td>{{ m.radio_num }}</td>
-                      <td>{{ m.status }}</td>
+                    <tr v-for="c in certificates">
+                      <th scope="row"> {{ c.certificationID }}</th>
+                      <td>{{ c.name }}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <br>
-              <form method="post" action="members.html" id="members" name="members" novalidate="novalidate">
+            </div>
+            <br>
+            <form v-on:submit.prevent = "handleDeleteCertificateForm">
+                <div class="row align-items-stretch mb-5 justify-content-center">
+                    <div class="col-md-3">
+                        <center><h4 class="section-heading text-uppercase">Name</h4></center>
+                        <br>
+                        <div class="form-group">
+                            <label for="cname">Certification ID:</label>
+                            <input class="form-control" v-model="certification.id" name="cname" id="cname" type="text" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
                 <div class="text-center">
                     <div id="success"></div>
-                    <button class="btn btn-primary btn-xl text-uppercase" id="members" type="submit">Back</button>
+                    <button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit" onclick="success()">Delete Certifcation</button>
                 </div>
-              </form>
-            </center>
+            </form>
+            <br>
+            <form method="post" action="certificates.html" id="certificates" name="certificates" novalidate="novalidate">
+                <div class="text-center">
+                    <div id="success"></div>
+                    <button class="btn btn-primary btn-xl text-uppercase" id="certificates" type="submit">Back</button>
+                </div>
+            </form>
         </section>
         <!-- Footer-->
         <footer class="footer py-4">
@@ -112,12 +112,8 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- Table Contents JS-->
+        <!-- Vue JS-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="js/member.js"></script>
-        <script src="js/tablesort.min.js"></script>
-        <script src="js/tablesort.number.min.js"></script>
-        <!-- Sort Table-->
-        <script>new Tablesort(document.getElementById('tablesort'));</script>
+        <script src="js/certificates.js"></script>
     </body>
 </html>

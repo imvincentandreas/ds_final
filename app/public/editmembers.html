@@ -47,117 +47,36 @@
         <section class="page-section" id="login">
           <div class="text-center">
               <h2 class="section-heading text-uppercase">Update Member</h2>
-              <h3 class="section-subheading text-muted">Please input new member details here.</h3>
+              <h3 class="section-subheading text-muted">Select Member to Update.</h3>
           </div>
-            <div class="container">
-                <div class="col cardPane cardPaneLeft">
-                  <div class="memberCard" v-for="m in members" v-on:click="activeMem = m">
-                    <span>{{ m.fname }}</span>,
-                    <span>{{ m.lname }}</span>
-                  </div>
-                </div>
-                <div class="col cardPane cardPaneRight" id="updateMember">
-                  <form v-on:submit.prevent = "handleNewMemberForm">
-                      <div class="row align-items-stretch mb-5 justify-content-center">
-                          <div class="col-md-3">
-                              <center><h4 class="section-heading text-uppercase">Name</h4></center>
-                              <br>
-                              <div class="form-group">
-                                  <label for="fname">First Name:</label>
-                                  <input class="form-control" v-model="members.fname" name="fname" id="fname" type="text"/>
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="mname">Middle Name:</label>
-                                  <input class="form-control" v-model="members.mname" name="mname" id="mname" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="lname">Last Name:</label>
-                                  <input class="form-control" v-model="members.lname" name="lname" id="lname" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <div class="col-md-3">
-                              <center><h4 class="section-heading text-uppercase">Address</h4></center>
-                              <br>
-                              <div class="form-group">
-                                  <label for="street">Street:</label>
-                                  <input class="form-control" v-model="members.street" name="street" id="street" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="city">City:</label>
-                                  <input class="form-control" v-model="members.city" name="city" id="city" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="state">State:</label>
-                                  <input class="form-control" v-model="members.state" name="state" id="state" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="zip">Zipcode:</label>
-                                  <input class="form-control" v-model="members.zip" name="zip" id="zip" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <div class="col-md-3">
-                              <center><h4 class="section-heading text-uppercase">Contact</h4></center>
-                              <br>
-                              <div class="form-group">
-                                  <label for="phone">Phone:</label>
-                                  <input class="form-control" v-model="members.phone" name="phone" id="phone" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="email">Email:</label>
-                                  <input class="form-control" v-model="members.email" name="email" id="email" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <div class="col-md-3">
-                              <center><h4 class="section-heading text-uppercase">Additional</h4></center>
-                              <br>
-                              <div class="form-group">
-                                  <label for="position">Position:</label>
-                                  <input class="form-control" v-model="members.position" name="position" id="position" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="station">StationID:</label>
-                                  <input class="form-control" v-model="members.station" name="station" id="station" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                              <br>
-                              <div class="form-group">
-                                  <label for="radio_num">Radio Number:</label>
-                                  <input class="form-control" v-model="members.radio_num" name="radio_num" id="radio_num" type="text" />
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="text-center">
-                          <div id="success"></div>
-                          <button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit" onclick="success()">Add Member</button>
-                      </div>
-                  </form>
-                </div>
-            </div>
-            <br>
-            <form method="post" action="members.html" id="members" name="members" novalidate="novalidate">
-                <div class="text-center">
-                    <div id="success"></div>
-                    <button class="btn btn-primary btn-xl text-uppercase" id="members" type="submit">Back</button>
-                </div>
-            </form>
+          <div class="container" id="updateMember">
+            <table class="table table-hover w-auto" width="90%" id="tablesort">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Name</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="m in members">
+                  <th scope="row"> {{ m.memberID }}</th>
+                  <td>{{ m.fname }} {{ m.mname }} {{ m.lname }}</td>
+                  <td>{{ m.street }}, {{ m.city }}, {{ m.state }} {{ m.zip }}</td>
+                  <td>
+                    <input type="text" placeholder={{ m.memberID }}/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br>
+          <form method="post" action="members.html" id="members" name="members" novalidate="novalidate">
+            <div class="text-center">
+              <div id="success"></div>
+                <button class="btn btn-primary btn-xl text-uppercase" id="members" type="submit">Back</button>
+              </div>
+          </form>
         </section>
 
         <!-- Footer-->
@@ -184,7 +103,6 @@
         <!-- Table Contents JS-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/updatemembers.js"></script>
-        <script src="js/member.js"></script>
         <script src="js/tablesort.min.js"></script>
         <script src="js/tablesort.number.min.js"></script>
         <!-- Sort Table-->
