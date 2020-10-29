@@ -124,7 +124,7 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="station">StationID:</label>
+                                <label for="station">StationID (1, 2, 3, or 4):</label>
                                 <input class="form-control" v-model="members.station" name="station" id="station" type="text" />
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="text-center">
                         <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit" onclick="success()">Add Member</button>
+                        <button class="btn btn-primary btn-xl text-uppercase" onclick="success()" id="submit" type="submit">Add Member</button>
                     </div>
                 </form>
             </div>
@@ -146,7 +146,7 @@
             <form method="post" action="members.html" id="members" name="members" novalidate="novalidate">
                 <div class="text-center">
                     <div id="success"></div>
-                    <button class="btn btn-primary btn-xl text-uppercase" id="members" type="submit">Back</button>
+                    <button class="btn btn-primary btn-xl text-uppercase"  id="members" type="submit">Back</button>
                 </div>
             </form>
         </section>

@@ -1,7 +1,20 @@
 var insertMember = new Vue({
   el: '#insertMember',
   data: {
-    members: {}
+    members:[{
+      fname: "",
+      mname: "",
+      lname: "",
+      street: "",
+      city: "",
+      state: "",
+      zip: "",
+      phone: "",
+      email: "",
+      position: "",
+      station: "",
+      radio_num: ""
+  }]
   },
   methods: {
     handleNewMemberForm() {
@@ -12,7 +25,6 @@ var insertMember = new Vue({
         "Content-Type": "application/json; charset=utf-8"
       }
       })
-      .then( response => response.text() )
 
       this.handleData();
     },
