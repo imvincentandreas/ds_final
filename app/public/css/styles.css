@@ -541,8 +541,6 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -569,8 +567,6 @@ pre code {
 
 .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
   width: 100%;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -10007,7 +10003,7 @@ p {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 3rem 0;
 }
 .page-section h2.section-heading {
   font-size: 2.5rem;
@@ -10511,4 +10507,16 @@ section#contact form#contactForm :-ms-input-placeholder {
   border: 1px solid #999;
   border-radius: 5px;
   background-color: white;
+}
+
+.patientCard {
+  margin: 4px;
+  padding: 4px 8px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.patientCard .lastName {
+  font-weight:bold;
 }

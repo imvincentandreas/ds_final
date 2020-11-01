@@ -1,111 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>OCFR</title>
-        <link rel="icon" type="image/x-icon" href="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html"><img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" alt="" /></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ml-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ml-auto">
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="loggedin.html">Home</a></li>
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="members.html">Members</a></li>
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="certificates.html">Certificates</a></li>
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="reports.html">Members</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead" id="masthead">
-            <div class="container">
-                <div class="masthead-heading text-uppercase">FIRE RESCUE</div>
-                <div class="masthead-subheading">Oconee County, GA</div>
-            </div>
-        </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>OCFR</title>
+    <link rel="icon" type="image/x-icon" href="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-        <!-- Form-->
-        <section class="page-section" id="login">
-          <div class="text-center">
-              <h2 class="section-heading text-uppercase">Update Member</h2>
-              <h3 class="section-subheading text-muted">Select Member to Update.</h3>
+  <body id="page-top">
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html"><img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" alt="" /></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="loggedin.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="members.html">Members</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="certificates.html">Certificates</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="reports.html">Members</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead" id="masthead">
+      <div class="container">
+        <div class="masthead-heading text-uppercase">FIRE RESCUE</div>
+        <div class="masthead-subheading">Oconee County, GA</div>
+      </div>
+    </header>
+
+    <!-- Form-->
+    <center>
+    <section class="page-section" id="login">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Update Member</h2>
+        <br>
+      </div>
+      <div class="container" id="memberInfo">
+        <div class="row">
+          <div class="col">
+            <div class="memberCard" v-for="m in memberInfo" v-on:click="activeMember = m">
+              <span class="lastName">{{ m.lname }}</span>,
+              <span clas="firstName">{{ m.fname }}</span>
+            </div>
           </div>
-          <div class="container" id="updateMember">
-            <table class="table table-hover w-auto" width="90%" id="tablesort">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Name</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="m in members">
-                  <th scope="row"> {{ m.memberID }}</th>
-                  <td>{{ m.fname }} {{ m.mname }} {{ m.lname }}</td>
-                  <td>{{ m.street }}, {{ m.city }}, {{ m.state }} {{ m.zip }}</td>
-                  <td>
-                    <input type="text" placeholder={{ m.memberID }}/>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <br>
-          <form method="post" action="members.html" id="members" name="members" novalidate="novalidate">
-            <div class="text-center">
-              <div id="success"></div>
-                <button class="btn btn-primary btn-xl text-uppercase" id="members" type="submit">Back</button>
+          <div class="col">
+            <center><h4 class="section-heading text-uppercase">Information</h4></center>
+            <form v-on:submit.prevent = "viewMemberDetails">
+              <div class="row align-items-stretch mb-5 justify-content-center">
+                <div class="col-md-auto">
+                  <div class="form-group">
+                    <label for="currentmemberID">Member ID:</label>
+                    <input class="form-control" v-bind:value="activeMemberID" name="currentmemberID" id="currentmemberID" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentfname">First Name:</label>
+                    <input class="form-control" v-bind:value="activeMemberFirstName" name="currentfname" id="currentfname" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentmname">Middle Name:</label>
+                    <input class="form-control" v-bind:value="activeMemberMiddleName" name="currentmname" id="currentmname" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentlname">Last Name:</label>
+                    <input class="form-control" v-bind:value="activeMemberLastName" name="currentlname" id="currentlname" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentstreet">Street:</label>
+                    <input class="form-control" v-bind:value="activeMemberStreet" name="currentstreet" id="currentstreet" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentcity">City:</label>
+                    <input class="form-control" v-bind:value="activeMemberCity" name="currentcity" id="currentcity" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentstate">State:</label>
+                    <input class="form-control" v-bind:value="activeMemberState" name="currentstate" id="currentstate" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentzip">Zipcode:</label>
+                    <input class="form-control" v-bind:value="activeMemberZipcode" name="currentzip" id="currentzip" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentphone">Phone:</label>
+                    <input class="form-control" v-bind:value="activeMemberPhone" name="currentphone" id="currentphone" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentemail">Email:</label>
+                    <input class="form-control" v-bind:value="activeMemberEmail" name="currentemail" id="currentemail" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentposition">Position:</label>
+                    <input class="form-control" v-bind:value="activeMemberPosition" name="currentposition" id="currentposition" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentstation">StationID (1, 2, 3, or 4):</label>
+                    <input class="form-control" v-bind:value="activeMemberStationID" name="currentstation" id="currentstation" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentradio_num">Radio Number:</label>
+                    <input class="form-control" v-bind:value="activeMemberRadioNum" name="currentradio_num" id="currentradio_num" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentstatus">Status:</label>
+                    <input class="form-control" v-bind:value="activeMemberStatus" name="currentstatus" id="currentstatus" type="text" readonly/>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
               </div>
-          </form>
-        </section>
-
-        <!-- Footer-->
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright 2020 © MSIS Team 18</div>
-                    <div class="col-lg-4 my-3 my-lg-0"></div>
-                    <div class="col-lg-4 text-lg-right">Template Obtained From StartBootstrap.com</div>
+            </form>
+          </div>
+          <div class="col">
+            <center><h4 class="section-heading text-uppercase">Updated Information</h4></center>
+            <form v-on:submit.prevent = "editMemberData">
+              <div class="row align-items-stretch mb-5 justify-content-center">
+                <div class="col-md-auto">
+                  <div class="form-group">
+                    <label for="memberID">Member ID:</label>
+                    <input class="form-control" v-model="updatedMember.memberID" name="memberID" id="memberID" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input class="form-control" v-model="updatedMember.fname" name="fname" id="fname" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="mname">Middle Name:</label>
+                    <input class="form-control" v-model="updatedMember.mname" name="mname" id="mname" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input class="form-control" v-model="updatedMember.lname" name="lname" id="lname" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="street">Street:</label>
+                    <input class="form-control" v-model="updatedMember.street" name="street" id="street" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="city">City:</label>
+                    <input class="form-control" v-model="updatedMember.city" name="city" id="city" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="state">State:</label>
+                    <input class="form-control" v-model="updatedMember.state" name="state" id="state" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="currentzip">Zipcode:</label>
+                    <input class="form-control" v-model="updatedMember.zip" name="currentzip" id="currentzip" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input class="form-control" v-model="updatedMember.phone" name="phone" id="currentphphoneone" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" v-model="updatedMember.email" name="email" id="currenemailtemail" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="position">Position:</label>
+                    <input class="form-control" v-model="updatedMember.position" name="position" id="position" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="stationID">StationID (1, 2, 3, or 4):</label>
+                    <input class="form-control" v-model="updatedMember.stationID" name="stationID" id="stationID" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="radio_num">Radio Number:</label>
+                    <input class="form-control" v-model="updatedMember.radio_num" name="radio_num" id="radio_num" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="status">Status:</label>
+                    <input class="form-control" v-model="updatedMember.status" name="status" id="status" type="text" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <br>
+                  <div class="text-center">
+                      <div id="success"></div>
+                      <button class="btn btn-primary btn-xl text-uppercase" onclick="success()" id="updateMember" type="submit">Update Member</button>
+                  </div>
                 </div>
-            </div>
-        </footer>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <form method="post" action="members.html" id="member" name="member" novalidate="novalidate">
+        <div class="text-center">
+          <div id="success"></div>
+          <button class="btn btn-primary btn-xl text-uppercase" id="member" type="submit">Back</button>
+        </div>
+      </form>
+    </section>
+  </center>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- Table Contents JS-->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="js/updatemembers.js"></script>
-        <script src="js/tablesort.min.js"></script>
-        <script src="js/tablesort.number.min.js"></script>
-        <!-- Sort Table-->
-        <script>new Tablesort(document.getElementById('tablesort'));</script>
+      <!-- Footer-->
+      <footer class="footer py-4">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-left">Copyright 2020 © MSIS Team 18</div>
+            <div class="col-lg-4 my-3 my-lg-0"></div>
+            <div class="col-lg-4 text-lg-right">Template Obtained From StartBootstrap.com</div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Bootstrap core JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+      <!-- Third party plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- Contact form JS-->
+      <script src="assets/mail/jqBootstrapValidation.js"></script>
+      <script src="assets/mail/contact_me.js"></script>
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+      <!-- Vue JS-->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="js/updatemembers.js"></script>
     </body>
 </html>

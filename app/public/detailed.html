@@ -43,40 +43,62 @@
             </div>
         </header>
         <!-- Table-->
-        <section class="page-section" id="viewCertificates">
+        <section class="page-section" id="memberCertificate">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">View Certificates</h2>
+                    <h2 class="section-heading text-uppercase">View Member Certificates</h2>
                 </div>
             </div>
+            <center>
+              <div class="filter">
+                <select v-model="filter.fn">
+                  <option value="">Certificates</option>
+                  <option v-for='m in memcert'>{{m.name}}</option>
+                </select>
+              </div>
+            </center>
+            <center>
+              <div class="filter">
+                <select v-model="filter.fn">
+                  <option value="">Member Last Name</option>
+                  <option v-for='m in members'>{{m.lname}}</option>
+                </select>
+              </div>
+            </center>
+            <br>
             <center>
               <div id="certificateInfo">
               <table class="table table-hover w-auto" width="90%" id="tablesort">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Validity (Years)</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Certification Name</th>
+                    <th scope="col">Earned Date</th>
+                    <th scope="col">Expiry Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="c in certificates">
-                    <th scope="row"> {{ c.certificationID }}</th>
-                    <td>{{ c.name }}</td>
-                    <td>{{ c.validity }}</td>
+                  <tr v-for='m in memberCertificate' v-if="filter.fn=='' || filter.fn == m.name || filter.fn == m.lname">
+                    <th scope="row"> {{ m.lname }}</th>
+                    <td>{{ m.fname }}</td>
+                    <td>{{ m.name }}</td>
+                    <td>{{ m.earn }}</td>
+                    <td>{{ m.expiration }}</td>
                   </tr>
                 </tbody>
               </table>
-              <button onclick="exportTableToCSV('certificates.csv')" type="submit" class="btn btn-primary btn-xl text-uppercase">Download</button>
+              <button onclick="exportTableToCSV('membersdetail.csv')" type="submit" class="btn btn-primary btn-xl text-uppercase">Download</button>
             </div>
             <br>
-            <form method="post" action="certificates.html" id="certificates" name="certificates" novalidate="novalidate">
+            <form method="post" action="loggedin.html" id="loggedin" name="loggedin" novalidate="novalidate">
                 <div class="text-center">
                     <div id="success"></div>
-                    <button class="btn btn-primary btn-xl text-uppercase" id="certificates" type="submit">Back</button>
+                    <button class="btn btn-primary btn-xl text-uppercase" id="backbutton" type="submit">Back</button>
                 </div>
             </form>
           </center>
+
         </section>
         <!-- Footer-->
         <footer class="footer py-4">
@@ -101,7 +123,7 @@
         <script src="js/scripts.js"></script>
         <!-- Table Contents JS-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="js/certificates.js"></script>
+        <script src="js/allmemcert.js"></script>
         <script src="js/exportcsv.js"></script>
         <script src="js/tablesort.min.js"></script>
         <script src="js/tablesort.number.min.js"></script>

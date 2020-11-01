@@ -13,7 +13,8 @@ var insertMember = new Vue({
       email: "",
       position: "",
       station: "",
-      radio_num: ""
+      radio_num: "",
+      status:""
   }]
   },
   methods: {

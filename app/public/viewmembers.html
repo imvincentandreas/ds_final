@@ -81,6 +81,7 @@
                     </tr>
                   </tbody>
                 </table>
+                <button onclick="exportTableToCSV('members.csv')" type="submit" class="btn btn-primary btn-xl text-uppercase">Download</button>
               </div>
               <br>
               <form method="post" action="members.html" id="members" name="members" novalidate="novalidate">
@@ -115,6 +116,7 @@
         <!-- Table Contents JS-->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/member.js"></script>
+        <script src="js/exportcsv.js"></script>
         <script src="js/tablesort.min.js"></script>
         <script src="js/tablesort.number.min.js"></script>
         <!-- Sort Table-->
