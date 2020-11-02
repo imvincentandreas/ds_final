@@ -37,5 +37,5 @@ var certificateInfo = new Vue({
 
 function success() {
   alert("Certification deleted successfully, redirecting to view certifications page");
-  window.location.href = "viewCertificates.html";
+  window.location.href = "viewcertificates.html";
 }
