@@ -31,5 +31,5 @@ var insertCertificate = new Vue({
 
 function success() {
   alert("Certification added successfully, redirecting to view certifications page");
-  window.location.href = "viewCertificates.html";
+  window.location.href = "viewcertificates.html";
 }
